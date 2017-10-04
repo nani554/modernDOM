@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+    <html>
+        <body>
+
+        <p>Click the button to display the position of the element "Apple":</p>
+        <input type="text" placeholder="whats up" id="takeMe">
+        <p id="demo"></p>
+        <ul>
+            <li>Orange</li>
+            <li>two</li>
+            <li>three</li>
+            <li>four</li>
+        </ul>
+
+            <script>
+                var doc = document.getElementById('takeMe');
+                
+                doc.addEventListener('keyup',myFunction);
+                function myFunction(e){
+                    var text = e.target.value.toLowerCase();
+                    var ma = document.querySelector('ul');
+                    var pa = ma.getElementsByTagName('li');
+                    Array.from(pa).forEach(function(xd){
+                        console.log(xd.textContent.toLowerCase());
+                        // console.log(text);
+                        if(xd.textContent.toLowerCase().indexOf(text) != -1){
+                           xd.style.display = "block";
+                        }
+                        else{
+                           xd.style.display = "none";
+                        }
+                    }); 
+                }
+            </script>
+        </body>
+    </html>
